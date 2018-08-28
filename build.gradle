@@ -33,7 +33,7 @@ pluginBundle {
     website = 'https://github.com/nemosrc'
 
     plugins {
-        greetingPlugin {
+        spigotJar {
             vcsUrl = 'https://github.com/nemosrc/spigot-jar'
             displayName = 'spigot-jar'
             description = 'Uber jar task for spigot plugin'
