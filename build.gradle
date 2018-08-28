@@ -1,0 +1,43 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.10.0'
+}
+
+group 'com.nemosw'
+version '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile localGroovy()
+    compile gradleApi()
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+gradlePlugin {
+    plugins {
+        spigotJar {
+            id = 'net.snowmc.spigot-jar'
+            implementationClass = 'net.snowmc.spigot.jar.SpigotJarPlugin'
+        }
+    }
+}
+
+pluginBundle {
+    website = 'https://github.com/snowmc'
+
+    plugins {
+        greetingPlugin {
+            vcsUrl = 'https://github.com/snowmc/spigot-jar'
+            displayName = 'Greeting Plugin'
+            description = 'Template for people to start their own plugin adventure'
+            tags = ['example', 'template']
+        }
+    }
+}
