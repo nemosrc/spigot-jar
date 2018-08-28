@@ -10,21 +10,16 @@ class SpigotJarPlugin implements Plugin<Project> {
     void apply(Project target) {
 
         target.allprojects.forEach {
-            println it.name
             TaskContainer tasks = it.tasks
-
             it.pluginManager.withPlugin('java', {
                 Task processResources = tasks.processResources
                 processResources.doFirst {
                     processResources.expand target.properties
                 }
             })
-
-            println it.name
         }
 
         SpigotJarExtension ext = target.extensions.create('spigotJar', SpigotJarExtension, target.allprojects.collect())
-
         target.pluginManager.withPlugin('java', {
             // setup properties for plugin.yml
             target.tasks.processResources.doFirst {
