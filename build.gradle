@@ -23,21 +23,21 @@ dependencies {
 gradlePlugin {
     plugins {
         spigotJar {
-            id = 'net.snowmc.spigot-jar'
-            implementationClass = 'net.snowmc.spigot.jar.SpigotJarPlugin'
+            id = 'com.nemosw.spigot-jar'
+            implementationClass = 'com.nemosw.spigot.jar.SpigotJarPlugin'
         }
     }
 }
 
 pluginBundle {
-    website = 'https://github.com/snowmc'
+    website = 'https://github.com/nemosrc'
 
     plugins {
         greetingPlugin {
-            vcsUrl = 'https://github.com/snowmc/spigot-jar'
-            displayName = 'Greeting Plugin'
-            description = 'Template for people to start their own plugin adventure'
-            tags = ['example', 'template']
+            vcsUrl = 'https://github.com/nemosrc/spigot-jar'
+            displayName = 'spigot-jar'
+            description = 'Uber jar task for spigot plugin'
+            tags = ['minecraft', 'bukkit', 'spigot']
         }
     }
 }
