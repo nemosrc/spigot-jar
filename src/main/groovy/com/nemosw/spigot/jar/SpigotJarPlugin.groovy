@@ -33,5 +33,7 @@ class SpigotJarPlugin implements Plugin<Project> {
                 }
             }
         })
+
+        target.plugins.apply('java')
     }
 }
